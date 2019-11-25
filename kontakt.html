@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="sr" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Kontakt</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <link rel="shortcut icon" href="slike/konj.png" />
+	    <link rel="stylesheet" type="text/css" href="css/kontakt.css">
+	    <link rel="stylesheet" type="text/css" href="css/stilovi.css">
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <button onclick="topFunction()" id="myBtn" title="Vrati na vrh">Vrati na vrh</button>
+	    <script>
+		  <!-- When the user scrolls down 20px from the top of the document, show the button-->
+		  window.onscroll = function() {scrollFunction()};
+
+		  function scrollFunction() {
+		      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		         document.getElementById("myBtn").style.display = "block";
+		     } else {
+		        document.getElementById("myBtn").style.display = "none";
+		     }
+		}
+		 <!--When the user clicks on the button, scroll to the top of the document-->
+		function topFunction() {
+		    document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+		    document.documentElement.scrollTop = 0; // For IE and Firefox
+		}
+		</script>
+		<script>
+			function validateEmail(emailField){
+		        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+		        if (reg.test(emailField.value) == false || emailField.value==null || emailField.value=="") 
+		        {
+		            alert('Pogrešna E-mail Adresa!');
+		            return false;
+		    	}
+        		return true;
+			}
+		</script>
+
+		<script>
+			function validate()
+    		{
+             if(document.myForm.details.value == '') 
+             {      
+            alert("Niste Uneli Pitanje!");
+              document.myForm.details.focus();
+            return false;       
+            }
+             else if(document.myForm.name.value == '')
+             {      
+            alert("Niste Uneli Ime!");
+              document.myForm.name.focus();
+            return false;       
+            }
+             else{
+             	alert('Uspešno Ste Poslali Pitanje!');
+               return true;
+           }
+    		}
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+
+	      <div id="header">
+	      	<p>
+	        	<img src="slike/konj.png" width="192" height="108">
+	        </p>
+	      </div>
+	      <div class="container">
+				    <nav class="navbar navbar-inverse">
+				        <!-- Brand and toggle get grouped for better mobile display -->
+				        <div class="navbar-header">
+				            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+				                <span class="sr-only">Toggle navigation</span>
+				                <span class="icon-bar"></span>
+				                <span class="icon-bar"></span>
+				                <span class="icon-bar"></span>
+				            </button>
+				            <a href="index.html" class="navbar-brand">Ferrari</a>
+				        </div>
+				        <!-- Collection of nav links, forms, and other content for toggling -->
+				        <div id="navbarCollapse" class="collapse navbar-collapse">
+				            <ul class="nav navbar-nav">
+				                <li><a href="index.html">Home</a></li>
+				                <li><a href="modeli.html">Modeli</a></li>
+				                <li><a href="istorija.html">Istorija</a></li>
+				            </ul>
+				            <ul class="nav navbar-nav navbar-right">
+				                <li class="dropdown">
+				                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Info <b class="caret"></b></a>
+				                    <ul class="dropdown-menu">
+				                        <li><a href="#">Kontakt</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="faq.html">FAQ</a></li>
+				                    </ul>
+				                </li>
+				            </ul>
+				        </div>
+				    </nav>
+				</div>
+	      
+
+	      <div id="sadrzaj">
+	        <div class="kontejner">
+			  <form name="myForm" id="myForm" onsubmit="return validate();">
+
+			    <label for="ime">Ime</label>
+			    <input type="text" id="name" name="name" placeholder="Vaše ime">
+
+			    <label for="prezime">Prezime</label>
+			    <input type="text" id="prezime" name="prezime" placeholder="Vaše Prezime">
+			    <label for="email">E-mail</label>
+			    <input type="text" id="email" name="email" placeholder="Vaša e-mail adresa" onblur="validateEmail(this);"/>
+			    <label for="region">Region</label>
+			    <select id="region" name="region">
+			      <option value="vojvodina">Vojvodina</option>
+			      <option value="macva">Mačva</option>
+			      <option value="beograd" selected>Beograd</option>
+			      <option value="južnas">Južna Srbija</option>
+			      <option value="kosovo">Kosovo</option>
+			    </select>
+
+			    <label for="sadrzaj">Sadržaj</label>
+			    <textarea name="details" id="details" placeholder="Vaše pitanje..." style="height:200px"></textarea>
+			    <label class="checkbox-inline" ><input type="checkbox" value="">Da li se slažete da Vas obaveštavamo o najznačajnijim dešavanjima kod nas </label><br>
+			    <input type="submit" value="Submit">
+			    <input type="reset" value="Clear">
+			  </form>
+			</div>
+			<h3 class="tekst">Gde se nalazimo</h3>
+	          <div>
+		          <div id="map"> </div>
+		          <div style="float: right; height: 400px; width: 45%">
+		          		<table id="tabela" class="tekst">
+		          			<tr>
+		          				<td>Lokacija:</td>
+		          				<td >FON, 11000 Beograd</td>
+		          			</tr>
+		          			<tr>
+		          				<td>Radno vreme:</td>
+		          				<td>8h - 17h</td>
+		          			</tr>
+		          			<tr>
+		          				<td>Kontakt telefon:</td>
+		          				<td>+381 11 121 21 21</td>
+		          			</tr>
+		          			<tr>
+		          				<td>E-mail:</td>
+		          				<td>office@ferrari.rs</td>
+		          			</tr>
+		          		</table>
+		          </div>
+		      </div>
+		      	<script>
+				  function myMap() {
+					  var mapOptions = {
+					     zoom: 15,
+					      center: new google.maps.LatLng(44.802228, 20.465471),  
+					  }
+
+					  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+					  var marker = new google.maps.Marker({
+					    position:{lat:44.802228, lng:20.465471},
+					    map:map,
+					  });
+
+				  }
+				</script>
+
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS7SybQ0cvqZggELKqSOYnjDdn52_Kjeo&callback=myMap">
+				</script>
+			</div>
+          
+	      <div id="foter" class = "tekst">
+	      	<p>©FON 2019</p>
+	      	<p id="demo"></p>
+	      	<script>
+				var d = new Date();
+				document.getElementById("demo").innerHTML = d.toDateString();
+			</script>
+	      </div>
+	    </div>
+	    
+	</body>
+</html>

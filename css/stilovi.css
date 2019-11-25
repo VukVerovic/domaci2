@@ -1,0 +1,41 @@
+#header{
+	font-size: 3em;
+	font-weight: 500;
+	text-align: center;
+}
+
+#sadrzaj{
+    font-size: 1.2em;
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
+.navbar{
+    margin-top: 20px;
+}
+
+#myBtn {
+   
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: grey; /* Set a background color */
+    color: white; /* Text color */
+    font-weight: bold;
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 100;
+}
+
+#myBtn:hover {
+    background-color: black;
+}
+
+#footer{
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+}
